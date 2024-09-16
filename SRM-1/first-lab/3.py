@@ -1,10 +1,18 @@
-x1 = int(input("Введіть координату x1: "))
-y1 = int(input("Введіть координату y1: "))
-x2 = int(input("Введіть координату x2: "))
-y2 = int(input("Введіть координату y2: "))
+def get(prompt):
+    while True:
+        try:
+            value = int(input(prompt))
+            return value
+        except ValueError:
+            print("Невірний ввід. Будь ласка, введіть ціле число.")
 
-len_x = (x2 - x1)
-len_y = (y2 - y1)
+x1 = get("Введіть координату x1: ")
+y1 = get("Введіть координату y1: ")
+x2 = get("Введіть координату x2: ")
+y2 = get("Введіть координату y2: ")
+
+len_x = abs(x2 - x1)
+len_y = abs(y2 - y1)
 
 s = len_x * len_y
 p = 2 * (len_x + len_y)

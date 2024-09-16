@@ -1,21 +1,17 @@
-def get_positive_integer(prompt):
+def get(prompt):
     while True:
         try:
             value = int(input(prompt))
-            if value > 0:
-                return value
-            else:
-                print("Помилка: число повинно бути більше 0.")
+            return value
         except ValueError:
             print("Невірний ввід. Будь ласка, введіть ціле число.")
 
-N = get_positive_integer("Введіть ціле число N (N > 0): ")
+N = get("Введіть ціле число N: ")
 
-reversed_N = 0
+sign = '-' if N < 0 else ''
+N = str(abs(N))  
 
-while N > 0:
-    last_digit = N % 10
-    reversed_N = reversed_N * 10 + last_digit
-    N = N // 10
+reversed_N = N[::-1]
 
-print(f"Зворотне число: {reversed_N}")
+result = sign + reversed_N
+print(f"Зворотне число: {result}")

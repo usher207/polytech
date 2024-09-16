@@ -1,5 +1,4 @@
 import math
-import math
 
 def get_positive_integer(prompt):
     while True:
